@@ -27,7 +27,7 @@ def is_single_character_string(text):
 #致美化执行
 def zmh_xc():
     # 读取环境变量的账号和密码 @符号分割
-    zmh = os.environ('zhm')
+    zmh = os.environ('zmh')
 
     if '@' in zmh:
         # 账号格式正确
