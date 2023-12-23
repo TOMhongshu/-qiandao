@@ -16,6 +16,7 @@ import json
 import datetime
 import hashlib
 import time
+import os
 from notify import send #导入青龙消息通知模块
 
 #MD5加密
