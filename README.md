@@ -7,7 +7,7 @@
 ```
 名称：自用
 类型：公开仓库
-链接：https://ghproxy.com/https://github.com/TOMhongshu/zyqiandao.git
+链接：https://github.com/TOMhongshu/zyqiandao.git
 定时类型：crontab
 定时规则：0 30 * * * *
 文件后缀：py
