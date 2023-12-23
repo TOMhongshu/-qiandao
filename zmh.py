@@ -18,7 +18,7 @@ import datetime
 import os
 import time
 import random
-import send #导入青龙消息通知模块
+from notify import send #导入青龙消息通知模块
 
 
 def is_single_character_string(text):
@@ -124,12 +124,12 @@ def zmh_xc():
             "Referer": newPost_url}
         comments_resp = requests.post(url=comments_url, data=comments_data, headers=comments_head)
         print(newPost_list[int(serialNumber)][1] + ' 评论成功 延迟60秒')
-        returnsLogs = returnsLogs + "\n" + newPost_list[serialNumber][1] + ' 评论成功 延迟60秒'
-        time.sleep(60)
+        if i <3 :
+            returnsLogs = returnsLogs + "\n" + newPost_list[serialNumber][1] + ' 评论成功 延迟60秒'
+            time.sleep(60)
 
     # 执行完成 发送通知
-    send('致美化',returnsLogs +'\n\n 本通知 By github https://github.com/TOMhongshu/-qiandao/')
-
+    send('致美化签到', returnsLogs + '\n\n本通知 By github https://github.com/TOMhongshu/-qiandao/ \n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
 if __name__ == "__main__":
     zmh_xc()
