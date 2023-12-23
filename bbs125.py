@@ -2,7 +2,7 @@
 
 精易论坛签到脚本
 
-export bbs125 = "cookie@formhash"
+export JY_cookie = "cookie@formhash"
 
 定时每天一次即可
 
