@@ -1,4 +1,4 @@
-/*
+#'''
 
 葫芦侠签到脚本
 
@@ -10,7 +10,7 @@ export hlx = "手机号@密码"
 cron: 0 0 8 * *
 const $ = new Env("葫芦侠签到");
 
-*/
+'''
 
 import requests
 import json
