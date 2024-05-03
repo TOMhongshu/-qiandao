@@ -18,6 +18,7 @@ import time
 import random
 import logging
 import datetime
+from notify import send #导入青龙消息通知模块
 
 def is_single_character_string(text):
     return isinstance(text, str) and len(text) == 1
