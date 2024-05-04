@@ -39,12 +39,12 @@ def cntk_xc():
         message_url = 'https://www.sucai999.com/default/index/get_userinfo'
         message_resp = requests.get(message_url, verify=False, cookies=cookie)
         print("开始获取用户信息 >>>\n")
-        print('用户名称：' + message_resp.json()['nickname'] + '\n')
-        print('账户余额：' + message_resp.json()['balance'] + '\n')
-        print('用户图币：' + message_resp.json()['sucaibalance'] + '\n')
-        print('用户会员：' + message_resp.json()['birdhome'] + '\n')
-        print('用户时长：' + message_resp.json()['vip_time'] + '\n')
-        print('用户会员：' + message_resp.json()['birdhome'] + '\n')
+        print('用户名称：' + message_resp.json()['nickname'])
+        print('账户余额：' + message_resp.json()['balance'])
+        print('用户图币：' + str(message_resp.json()['sucaibalance']))
+        print('用户会员：' + message_resp.json()['birdhome'])
+        print('用户时长：' + message_resp.json()['vip_time'])
+        print('用户会员：' + message_resp.json()['birdhome'])
         print('作品数量：' + message_resp.json()['sucai_count'] + '\n\n')
         returnsLogs = returnsLogs + "开始获取用户信息 >>>\n" + '用户名称：' + message_resp.json()['nickname'] + '\n' + '账户余额：' + message_resp.json()['balance'] + '\n' + '用户图币：' + message_resp.json()['sucaibalance'] + '\n'+ '用户会员：' + message_resp.json()['birdhome'] + '\n' + '用户时长：' + message_resp.json()['vip_time'] + '\n' + '用户会员：' + message_resp.json()['birdhome'] + '\n' + '作品数量：' + message_resp.json()['sucai_count'] + '\n\n'
         sign_url = 'https://www.sucai999.com/default/qiandao/qd'
@@ -55,6 +55,8 @@ def cntk_xc():
             print(sign_resp.json()['yiqiandao'] + '\n')
             print('获得图币：' + sign_resp.json()['num'] + '\n')
             returnsLogs = returnsLogs + sign_resp.json()['msg'] + '\n' + sign_resp.json()['content'] + '\n' + sign_resp.json()['yiqiandao'] + '\n' + '获得图币：' + sign_resp.json()['num'] + '\n'
+        else:
+            returnsLogs = returnsLogs + sign_resp.json()['msg'] + '\n'
     else:
         print("菜鸟图库登录失败，请检查账号是否正确 >>>")
         returnsLogs = "菜鸟图库登录失败，请检查账号是否正确 >>>"
