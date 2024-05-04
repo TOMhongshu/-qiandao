@@ -46,7 +46,7 @@ def cntk_xc():
         print('用户时长：' + message_resp.json()['vip_time'])
         print('用户会员：' + message_resp.json()['birdhome'])
         print('作品数量：' + message_resp.json()['sucai_count'] + '\n\n')
-        returnsLogs = returnsLogs + "开始获取用户信息 >>>\n" + '用户名称：' + message_resp.json()['nickname'] + '\n' + '账户余额：' + message_resp.json()['balance'] + '\n' + '用户图币：' + message_resp.json()['sucaibalance'] + '\n'+ '用户会员：' + message_resp.json()['birdhome'] + '\n' + '用户时长：' + message_resp.json()['vip_time'] + '\n' + '用户会员：' + message_resp.json()['birdhome'] + '\n' + '作品数量：' + message_resp.json()['sucai_count'] + '\n\n'
+        returnsLogs = returnsLogs + "开始获取用户信息 >>>\n" + '用户名称：' + message_resp.json()['nickname'] + '\n' + '账户余额：' + message_resp.json()['balance'] + '\n' + '用户图币：' + str(message_resp.json()['sucaibalance']) + '\n'+ '用户会员：' + message_resp.json()['birdhome'] + '\n' + '用户时长：' + message_resp.json()['vip_time'] + '\n' + '用户会员：' + message_resp.json()['birdhome'] + '\n' + '作品数量：' + message_resp.json()['sucai_count'] + '\n\n'
         sign_url = 'https://www.sucai999.com/default/qiandao/qd'
         sign_resp = requests.get(sign_url, verify=False, cookies=cookie)
         if sign_resp.json()['status'] == 1:
